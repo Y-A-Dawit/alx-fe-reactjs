@@ -3,6 +3,7 @@ import MainContent from './MainContent'
 import Footer from './Footer'
 import WelcomeMessage from './components/WelcomeMessage.jsx'
 import UserProfile from './components/UserProfile.jsx'
+import Counter from './components/Counter.jsx'; // Import the Counter component
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -18,6 +19,7 @@ function App() {
     <Footer />
     <WelcomeMessage />
     <UserProfile name="Alice" age={25} bio="Loves hiking and photography" />
+    <Counter />
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
