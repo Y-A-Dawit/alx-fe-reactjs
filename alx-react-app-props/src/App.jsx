@@ -5,7 +5,7 @@ import WelcomeMessage from './components/WelcomeMessage.jsx'
 import UserProfile from './components/UserProfile.jsx'
 import UserContext from "./UserContext";
 import ProfilePage from "./ProfilePage";
-import { useState } from 'react'
+import { useState } from 'react' // for a named exports we must use curly braces
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
