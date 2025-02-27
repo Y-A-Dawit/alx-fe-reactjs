@@ -3,7 +3,7 @@ import MainContent from './MainContent'
 import Footer from './Footer'
 import WelcomeMessage from './components/WelcomeMessage.jsx'
 import UserProfile from './components/UserProfile.jsx'
-import { UserContext } from "./UserContext";
+import { UserContext } from "./components/UserContext";
 import ProfilePage from "./ProfilePage";
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
