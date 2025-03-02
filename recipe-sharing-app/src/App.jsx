@@ -3,6 +3,8 @@ import { useState } from 'react';
 import RecipeList from './components/RecipeList';
 import AddRecipeForm from './components/AddRecipeForm';
 import RecipeDetails from './components/RecipeDetails';
+import FavoritesList from './components/FavoritesList';
+import RecommendationsList from './components/RecommendationsList';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
@@ -40,8 +42,14 @@ function App() {
           <Routes>
             <Route path="/" element={<RecipeList />} />
             <Route path="/recipe/:id" element={<RecipeDetails />} />
+            <Route path="/" element={<RecipeList />} />
+            <Route path="/recipe/:id" element={<RecipeDetails />} />
           </Routes>
+          
+          <FavoritesList />
+          <RecommendationsList />
         </main>
+
 
         {/* Counter & Info */}
         <div className="card">
