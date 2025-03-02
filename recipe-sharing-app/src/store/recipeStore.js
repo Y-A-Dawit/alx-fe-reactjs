@@ -1,3 +1,4 @@
+// this wasn't supposed to be inside store folder but instead inside components folder
 import { create } from 'zustand';
 
 const useRecipeStore = create((set) => ({
