@@ -6,19 +6,16 @@ const TodoList = () => {
     { id: 2, text: "Learn Jest", completed: false },
   ]);
 
-  const addTodo = (text) => {
-    const newTodo = { id: Date.now(), text, completed: false };
-    setTodos([...todos, newTodo]);
-  };
-
   const toggleTodo = (id) => {
-    setTodos(todos.map(todo =>
-      todo.id === id ? { ...todo, completed: !todo.completed } : todo
-    ));
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
   };
 
   const deleteTodo = (id) => {
-    setTodos(todos.filter(todo => todo.id !== id));
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   return (
@@ -29,8 +26,8 @@ const TodoList = () => {
         {todos.map((todo) => (
           <li
             key={todo.id}
-            style={{ textDecoration: todo.completed ? "line-through" : "none" }}
             onClick={() => toggleTodo(todo.id)}
+            style={{ textDecoration: todo.completed ? "line-through" : "none" }}
           >
             {todo.text}
             <button onClick={() => deleteTodo(todo.id)}>Delete</button>
