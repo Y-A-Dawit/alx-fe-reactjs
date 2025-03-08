@@ -1,4 +1,5 @@
 import RegistrationForm from "./components/RegistrationForm.jsx";
+import formikForm from "./components/formikForm.js"
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -23,7 +24,7 @@ function App() {
         <h2>Controlled Form</h2>
         <RegistrationForm />
         <h2>Formik Form</h2>
-        
+        <formikForm />
       </div>
 
       <div className="card">
