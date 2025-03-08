@@ -1,5 +1,5 @@
-import RegistrationForm from "./components/RegistrationForm";
-import FormikForm from "./components/formikForm";
+import RegistrationForm from "./components/RegistrationForm.jsx";
+import FormikForm from "./components/formikForm.jsx";
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -24,7 +24,7 @@ function App() {
         <h2>Controlled Form</h2>
         <RegistrationForm />
         <h2>Formik Form</h2>
-        <FormikForm />
+        <formikForm />
       </div>
 
       <div className="card">
