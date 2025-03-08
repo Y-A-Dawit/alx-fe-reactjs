@@ -1,14 +1,16 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
+import { Route, Navigate } from "react-router-dom";
+import { useAuth } from "./hooks/useAuth";
 
-function ProtectedRoute({ element }) {
-  const isAuthenticated = false; // Replace with real auth check logic
+function ProtectedRoute({ element, ...rest }) {
+  const isAuthenticated = useAuth(); // Replace with real auth check logic
 
-  if (!isAuthenticated) {
-    return <Navigate to="/login" />;
-  }
-
-  return element;
+  return (
+    <Route
+      {...rest}
+      element={isAuthenticated ? element : <Navigate to="/login" />}
+    />
+  );
 }
 
 export default ProtectedRoute;
