@@ -7,6 +7,9 @@ const RegistrationForm = () => {
     password: "",
   });
 
+  // Destructure state values
+  const { username, email, password } = formData;
+
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
@@ -15,9 +18,9 @@ const RegistrationForm = () => {
 
   const validate = () => {
     let newErrors = {};
-    if (!formData.username) newErrors.username = "Username is required";
-    if (!formData.email) newErrors.email = "Email is required";
-    if (!formData.password) newErrors.password = "Password is required";
+    if (!username) newErrors.username = "Username is required";
+    if (!email) newErrors.email = "Email is required";
+    if (!password) newErrors.password = "Password is required";
     return newErrors;
   };
 
@@ -40,7 +43,7 @@ const RegistrationForm = () => {
         <input 
           type="text" 
           name="username" 
-          value={formData.username} // ✅ Uses formData.username
+          value={username} // ✅ Now uses value={username}
           onChange={handleChange} 
         />
         {errors.username && <span>{errors.username}</span>}
@@ -50,7 +53,7 @@ const RegistrationForm = () => {
         <input 
           type="email" 
           name="email" 
-          value={formData.email} // ✅ Uses formData.email
+          value={email} // ✅ Now uses value={email}
           onChange={handleChange} 
         />
         {errors.email && <span>{errors.email}</span>}
@@ -60,7 +63,7 @@ const RegistrationForm = () => {
         <input 
           type="password" 
           name="password" 
-          value={formData.password} // ✅ Uses formData.password
+          value={password} // ✅ Now uses value={password}
           onChange={handleChange} 
         />
         {errors.password && <span>{errors.password}</span>}
