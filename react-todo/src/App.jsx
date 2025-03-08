@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import TodoList from './components/TodoList'; // Importing TodoList component
+import TodoList from './components/TodoList.jsx'; // Importing TodoList component
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
