@@ -25,6 +25,8 @@ function App() {
             <li><a href="/about">About</a></li>
             <li><a href="/profile">Profile</a></li>
             <li><a href="/user/123">User 123 Profile</a></li>
+            <li><Link to="/blog/1">Blog Post 1</Link></li>
+            <li><Link to="/blog/2">Blog Post 2</Link></li>
           </ul>
         </nav>
         <Routes>
@@ -32,6 +34,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/profile/*" element={<Profile />} />
           <Route path="/user/:userId" element={<UserProfile />} />
+          <Route path="/blog/:id" element={<BlogPost />} /> {/* Dynamic route for blog post */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
