@@ -1,13 +1,18 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import RecipeDetail from './components/RecipeDetail';
+import AddRecipeForm from "./components/AddRecipeForm";
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [recipes, setRecipes] = useState([]);
+
+  const handleAddRecipe = (newRecipe) => {
+    setRecipes([...recipes, newRecipe]);
+  };
 
   return (
     <>
@@ -15,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/recipe/:id" element={<RecipeDetail />} />
+        <Route path="/add-recipe" element={<AddRecipeForm onAddRecipe={handleAddRecipe} />} />
       </Routes>
     </Router>
     <HomePage />
