@@ -3,12 +3,12 @@ import { useState } from "react";
 const AddRecipeForm = ({ onAddRecipe }) => {
   const [title, setTitle] = useState("");
   const [ingredients, setIngredients] = useState("");
-  const [instructions, setInstructions] = useState("");
+  const [steps, setSteps] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!title || !ingredients || !instructions) {
+    if (!title || !ingredients || !steps) {
       setError("All fields are required.");
       return;
     }
@@ -16,16 +16,16 @@ const AddRecipeForm = ({ onAddRecipe }) => {
     const newRecipe = {
       id: Date.now(),
       title,
-      summary: instructions.split(". ")[0],
+      summary: steps.split(". ")[0],
       image: "https://via.placeholder.com/150",
       ingredients: ingredients.split("\n").map((ing) => ing.trim()),
-      instructions: instructions.split("\n").map((step) => step.trim()),
+      steps: steps.split("\n").map((step) => step.trim()),
     };
 
     onAddRecipe(newRecipe);
     setTitle("");
     setIngredients("");
-    setInstructions("");
+    setSteps("");
     setError("");
   };
 
@@ -51,8 +51,8 @@ const AddRecipeForm = ({ onAddRecipe }) => {
         
         <label className="block mt-4 mb-2 font-semibold">Preparation Steps (one per line):</label>
         <textarea
-          value={instructions}
-          onChange={(e) => setInstructions(e.target.value)}
+          value={steps}
+          onChange={(e) => setSteps(e.target.value)}
           className="w-full p-2 border rounded-md"
         />
         
