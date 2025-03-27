@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Search from "./components/Search";
 import UserProfile from "./components/UserProfile";
 import { fetchUserData } from "./services/githubService";
+import './index.css'
 
 function App() {
   const [user, setUser] = useState(null);
