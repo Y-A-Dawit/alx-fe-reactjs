@@ -19,7 +19,7 @@ const Search = () => {
       const response = await axios.get(`https://api.github.com/users/${username}`);
       setUser(response.data);
     } catch {
-      setError("Looks like we can't find the user.");
+      setError("Looks like we cant find the user"); // ✅ Exact error message as required
     } finally {
       setLoading(false);
     }
@@ -40,7 +40,7 @@ const Search = () => {
 
       {/* Display Messages */}
       {loading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
+      {error && <p>{error}</p>}  {/* ✅ Displays "Looks like we cant find the user" */}
 
       {/* Display User Info */}
       {user && (
