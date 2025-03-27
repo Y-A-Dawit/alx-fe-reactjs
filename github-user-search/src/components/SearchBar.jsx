@@ -11,10 +11,10 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="search-form">
       <input
         type="text"
-        placeholder="Search GitHub User..."
+        placeholder="Enter GitHub username..."
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />

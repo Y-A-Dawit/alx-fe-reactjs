@@ -1,23 +1,35 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import SearchBar from './components/SearchBar';
-import './App.css'
+import React, { useState } from "react";
+import SearchBar from "./components/SearchBar";
+import UserProfile from "./components/UserProfile";
+import { fetchUserData } from "./services/githubService";
 
 function App() {
-  const handleSearch = (username) => {
-    console.log("Searching for:", username)
-  }
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const handleSearch = async (username) => {
+    setLoading(true);
+    setError(null);
+    setUser(null);
+
+    try {
+      const userData = await fetchUserData(username);
+      setUser(userData);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <>
-      <div>
-        <h1>GitHub User Search</h1>
-        <SearchBar onSearch={handleSearch} />
-        <p>Start searching for GitHub users!</p>
-      </div>
-    </>
-  )
+    <div>
+      <h1>GitHub User Search</h1>
+      <SearchBar onSearch={handleSearch} />
+      <UserProfile user={user} loading={loading} error={error} />
+    </div>
+  );
 }
 
-export default App
+export default App;
