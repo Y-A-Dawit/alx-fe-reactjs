@@ -7,6 +7,7 @@ export const fetchUserData = async (username) => {
     const response = await axios.get(`${API_URL}${username}`);
     return response.data;
   } catch {
-    throw new Error("User not found"); // No need to use the `error` variable
+    // Throw a custom error message if the user is not found
+    throw new Error("User not found");
   }
 };
